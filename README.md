@@ -71,9 +71,15 @@ pyftsubset LXGWWenKaiScreen.ttf \
 
 ## 部署到 GitHub Pages
 
-1. 仓库 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**。
-2. 推送到 `main` 分支，工作流 `.github/workflows/pages.yml` 会发布 `index.html` 与 `assets/`。
-3. 首次部署完成后，在 Actions 的 `github-pages` 环境里可以看到访问地址。
+1. **一次性启用**：仓库 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**。
+   > 这一步必须手动做：默认的 `GITHUB_TOKEN` 无权创建 Pages 站点，所以 workflow 里没有使用 `enablement: true`。
+2. 启用的方式二选一：
+   - 推送到 `main`，触发 `.github/workflows/pages.yml`；
+   - 或在 **Actions → Deploy to GitHub Pages → Run workflow** 手动运行。
+3. 部署完成后访问 <https://wutengfeiCN.github.io/my-first-website/>。
+4. 首次部署完成后，在 Actions 的 `github-pages` 环境里也能看到访问地址。
+
+如果访问仍是 404，按顺序检查：Pages 的 Source 是否为 **GitHub Actions**、Actions 里最近一次 deploy 是否成功、以及部署分支是否为 `main`。
 
 若使用自定义域名：在仓库根目录添加 `CNAME`（内容为域名），并在 DNS 处配置 CNAME 记录；同时更新页面里的绝对 URL。
 

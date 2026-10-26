@@ -31,9 +31,9 @@ jobs:
           cp -r assets _site/
 
       - name: Configure Pages
+        # 注意：Pages 站点必须先在仓库 Settings → Pages 里手动启用一次。
+        # 默认的 GITHUB_TOKEN 无权创建 Pages 站点，因此不要在这里使用 enablement: true。
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

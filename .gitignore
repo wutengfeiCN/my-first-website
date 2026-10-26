@@ -6,3 +6,6 @@ Thumbs.db
 .vscode/
 .idea/
 *.swp
+
+# 本地构建 / 预览
+_site/

@@ -2,33 +2,70 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>阿奔 · 建筑智能化工程师</title>
 <meta name="description" content="阿奔 —— 一名建筑智能化工程师，白天专注智能化解决方案，闲时折腾 AI 与 Linux，入夜捧卷研读国学经典。">
+<meta name="author" content="阿奔">
+<meta name="theme-color" content="#f7f4ee">
+<!-- 绑定自定义域名后，请同步替换 canonical / og:url / og:image / twitter:image 中的域名 -->
+<link rel="canonical" href="https://wutengfeiCN.github.io/my-first-website/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="阿奔 · 以技载道">
 <meta property="og:title" content="阿奔 · 建筑智能化工程师">
 <meta property="og:description" content="以技载道：智能化解决方案 × AI × Linux × 国学经典">
-<meta name="twitter:card" content="summary">
+<meta property="og:url" content="https://wutengfeiCN.github.io/my-first-website/">
+<meta property="og:image" content="https://wutengfeiCN.github.io/my-first-website/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="阿奔 · 建筑智能化工程师个人主页封面">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="阿奔 · 建筑智能化工程师">
 <meta name="twitter:description" content="以技载道：智能化解决方案 × AI × Linux × 国学经典">
+<meta name="twitter:image" content="https://wutengfeiCN.github.io/my-first-website/assets/og-cover.png">
+<meta name="twitter:image:alt" content="阿奔 · 建筑智能化工程师个人主页封面">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23c03f2b'/%3E%3Ctext x='32' y='44' font-size='36' text-anchor='middle' fill='%23f7f4ee' font-family='KaiTi,STKaiti,serif'%3E奔%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/wenkai-subset.woff2" as="font" type="font/woff2" crossorigin>
 <script>
-  // 防闪烁：渲染前恢复夜读偏好
-  if (localStorage.getItem('theme') === 'night') document.documentElement.classList.add('night');
-  // 字体 CDN 失败时切换备用镜像（error 不冒泡，须在 link 出现前于捕获阶段监听）
-  document.addEventListener('error', function (e) {
-    var t = e.target;
-    if (t && t.id === 'fontLink' && t.dataset.fallback) {
-      t.href = t.dataset.fallback;
-      t.removeAttribute('data-fallback');
+  (function () {
+    // 防闪烁：渲染前恢复主题；无存储权限时退回系统偏好
+    var saved = null;
+    try { saved = localStorage.getItem('theme'); } catch (e) {}
+    var night = saved ? saved === 'night'
+                      : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    if (night) {
+      document.documentElement.classList.add('night');
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', '#1a1815');
     }
-  }, true);
+  })();
 </script>
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link rel="stylesheet" id="fontLink" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.7.0/lxgwwenkaiscreen.css" data-fallback="https://fastly.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.7.0/lxgwwenkaiscreen.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "阿奔",
+  "alternateName": "wutengfeiCN",
+  "jobTitle": "建筑智能化工程师",
+  "description": "以技载道：智能化解决方案 × AI × Linux × 国学经典",
+  "url": "https://wutengfeiCN.github.io/my-first-website/",
+  "image": "https://wutengfeiCN.github.io/my-first-website/assets/og-cover.png",
+  "sameAs": ["https://github.com/wutengfeiCN"],
+  "knowsAbout": ["建筑智能化", "人工智能", "Linux", "国学经典"]
+}
+</script>
 <style>
-  /* 崇羲篆體（免费商用）· 仅子集内嵌「阿奔业愿智器学」7 字，专供印章 */
+  /* 正文：霞鹜文楷屏幕版子集（仅收录当前页面用字，约 46 KB；改文案后需重新生成，见 README） */
+  @font-face {
+    font-family: "LXGW WenKai Screen";
+    src: url("assets/fonts/wenkai-subset.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* 崇羲篆體（免费商用）· 子集内嵌「阿奔印業願智器學晝夜」10 字，专供印章与切换钮 */
   @font-face {
     font-family: "ChongXi Small Seal";
     src: url(data:font/woff2;base64,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) format("woff2");
@@ -36,13 +73,14 @@
   }
 
   :root {
+    color-scheme: light;
     --paper:    #f7f4ee;   /* 米白宣纸 */
     --card:     #fffdf9;   /* 卡面 */
     --ink:      #2b2b2b;   /* 墨色 */
     --ink-soft: #6b6459;   /* 淡墨 */
     --cinnabar: #c03f2b;   /* 朱砂 */
     --hairline: #e6e0d4;   /* 细线 */
-    --serif: "LXGW WenKai Screen", "Songti SC", "Noto Serif CJK SC", "Noto Serif SC", "SimSun", serif;
+    --serif: "LXGW WenKai Screen", "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", "Noto Serif SC", "SimSun", serif;
     --sealscript: "ChongXi Small Seal", "KaiTi", "STKaiti", serif;
     --sans:  -apple-system, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
   }
@@ -51,10 +89,12 @@
 
   /* ---------- 夜读模式 ---------- */
   html.night {
+    color-scheme: dark;
     --paper:    #1a1815;   /* 墨黑 */
     --card:     #24211b;   /* 灯下书页 */
     --ink:      #e8e2d5;
     --ink-soft: #9d9484;
+    --cinnabar: #d4553f;   /* 夜间提亮朱砂，印章大字对比度约 3.95:1 */
     --hairline: #4a4438; /* 夜间提亮，保证描边与引用竖条可见 */
   }
   html.night body {
@@ -95,8 +135,7 @@
     font-family: var(--sans);
     font-size: 13px;
     letter-spacing: .35em;
-    color: var(--ink-soft);
-    opacity: .7; /* 淡化处理，不抢标题风头 */
+    color: var(--ink-soft); /* 5.33:1（日）/ 5.91:1（夜），满足 AA 小字要求 */
     margin-bottom: 16px;
   }
 
@@ -113,6 +152,7 @@
     max-width: 34em;
     color: var(--ink-soft);
     font-size: 17px;
+    text-wrap: balance;
   }
 
   /* 印章：本页签名元素 */
@@ -208,6 +248,7 @@
   .card .quote cite {
     font-style: normal;
     font-size: 13px;
+    white-space: nowrap; /* 出处整体换行，避免「《論 / 語》」被拆开 */
   }
 
   .card h2 {
@@ -218,7 +259,7 @@
     margin-bottom: 8px;
   }
 
-  .card p { color: var(--ink-soft); font-size: 15px; }
+  .card p { color: var(--ink-soft); font-size: 15px; text-wrap: pretty; }
 
   /* ---------- 联系方式 ---------- */
   .contact {
@@ -279,6 +320,8 @@
     position: fixed;
     right: 24px;
     bottom: 24px;
+    right: max(24px, env(safe-area-inset-right));
+    bottom: max(24px, env(safe-area-inset-bottom));
     z-index: 10;
     width: 46px;
     height: 46px;
@@ -317,11 +360,25 @@
     .card:nth-child(5) { grid-column: span 6; }
   }
   @media (max-width: 540px) {
-    .wrap { padding-top: 40px; }
-    header { flex-direction: column-reverse; }
+    .wrap { padding-top: 40px; padding-bottom: 104px; }
+    /* 移动端把印章收回右上角，标题先读、印章作批注 */
+    header { display: block; position: relative; }
+    .seal {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 76px;
+      height: 76px;
+      padding: 4px 3px;
+      border-width: 2.5px;
+    }
+    .seal span { font-size: 28px; }
+    .seal span:last-child { font-size: 32px; }
     .grid { grid-template-columns: 1fr; }
     .card:nth-child(n) { grid-column: auto; }
-    .contact { flex-wrap: wrap; }
+    .contact { flex-wrap: wrap; gap: 16px; }
+    .contact .label { flex-basis: 100%; }
+    .contact a:first-of-type { margin-left: 0; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -329,6 +386,27 @@
       animation: none !important;
       transition: none !important;
     }
+  }
+
+  /* ---------- 打印 ---------- */
+  @media print {
+    html, html.night {
+      color-scheme: light;
+      --paper: #fff;
+      --card: #fff;
+      --ink: #111;
+      --ink-soft: #444;
+      --hairline: #ccc;
+      --cinnabar: #a33; /* 打印时略压暗，避免荧光感 */
+    }
+    body { background-color: var(--paper); }
+    html body, html.night body { background-image: none; }
+    .mode-toggle { display: none; }
+    header, .card, .contact, footer {
+      animation: none;
+      box-shadow: none;
+    }
+    html.night .card { box-shadow: none; }
   }
 </style>
 </head>
@@ -348,36 +426,36 @@
 
     <section class="card">
       <div class="seal-mini" aria-hidden="true">業</div>
-      <h2>建築智能化工程師</h2>
-      <p class="quote">知者創物，巧者述之 <cite>——《考工記》</cite></p>
+      <h2 lang="zh-Hant">建築智能化工程師</h2>
+      <p class="quote" lang="zh-Hant">知者創物，巧者述之 <cite>——《考工記》</cite></p>
       <p>专注智能化解决方案，让钢筋水泥拥有感知与回应的能力。</p>
     </section>
 
     <section class="card">
       <div class="seal-mini" aria-hidden="true">願</div>
-      <h2>AI × 建築智能化</h2>
-      <p class="quote">知行合一 <cite>—— 王陽明</cite></p>
+      <h2 lang="zh-Hant">AI × 建築智能化</h2>
+      <p class="quote" lang="zh-Hant">知行合一 <cite>—— 王陽明</cite></p>
       <p>用 AI 赋能建筑智能化——让楼宇更懂人，让工程更智慧。</p>
     </section>
 
     <section class="card">
       <div class="seal-mini" aria-hidden="true">智</div>
       <h2>人工智能</h2>
-      <p class="quote">溫故而知新，可以為師矣 <cite>——《論語》</cite></p>
+      <p class="quote" lang="zh-Hant">溫故而知新，可以為師矣 <cite>——《論語》</cite></p>
       <p>折腾 AI 应用与智能体，探索大模型在真实工程场景中的落地。</p>
     </section>
 
     <section class="card">
       <div class="seal-mini" aria-hidden="true">器</div>
       <h2>Linux</h2>
-      <p class="quote">工欲善其事，必先利其器 <cite>——《論語》</cite></p>
+      <p class="quote" lang="zh-Hant">工欲善其事，必先利其器 <cite>——《論語》</cite></p>
       <p>从命令行到自建服务，享受亲手掌控系统的自由与秩序。</p>
     </section>
 
     <section class="card">
       <div class="seal-mini" aria-hidden="true">學</div>
-      <h2>國學經典</h2>
-      <p class="quote">為學日益，為道日損 <cite>——《道德經》</cite></p>
+      <h2 lang="zh-Hant">國學經典</h2>
+      <p class="quote" lang="zh-Hant">為學日益，為道日損 <cite>——《道德經》</cite></p>
       <p>夜读经典，在古老的智慧里，寻找今日问题的答案。</p>
     </section>
 
@@ -385,12 +463,13 @@
 
   <section class="contact" aria-label="联系方式">
     <span class="label">——想聊聊，随时联系我</span>
-    <a href="#" id="mailLink" data-user="wutf" data-domain="163.com" aria-label="邮箱" title="邮箱">
+    <a href="mailto:wutf@163.com" id="mailLink" aria-label="邮箱" title="邮箱：wutf@163.com">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 18.5v-13zm2.3.5 7.7 6.2L19.7 6H4.3zM20 7.9l-7.4 6a1 1 0 0 1-1.2 0L4 7.9V18h16V7.9z"/></svg>
     </a>
     <a href="https://github.com/wutengfeiCN" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub：wutengfeiCN">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .8A11.3 11.3 0 0 0 .7 12.1c0 5 3.2 9.2 7.7 10.7.6.1.8-.2.8-.5v-2c-3.1.7-3.8-1.3-3.8-1.3-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.5-.3-5.1-1.2-5.1-5.5 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.4.1-3 0 0 .9-.3 3.1 1.2a10.6 10.6 0 0 1 5.6 0C16.5 5.6 17.4 5.9 17.4 5.9c.6 1.6.2 2.7.1 3 .7.8 1.1 1.8 1.1 3 0 4.3-2.6 5.2-5.1 5.5.4.4.8 1 .8 2.1v3c0 .3.2.6.8.5a11.3 11.3 0 0 0 7.7-10.7A11.3 11.3 0 0 0 12 .8z"/></svg>
     </a>
+    <!-- TODO: 博客地址占位，正式启用前替换 href（当前域名会 307 自跳转） -->
     <a href="https://blog.wutf.xin:18188" target="_blank" rel="noopener noreferrer" aria-label="个人博客" title="个人博客：blog.wutf.xin">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20a2 2 0 1 1 4 0 2 2 0 0 1-4 0zM3 9v3a9 9 0 0 1 9 9h3A12 12 0 0 0 3 9zm0-6v3a15 15 0 0 1 15 15h3A18 18 0 0 0 3 3z"/></svg>
     </a>
@@ -400,29 +479,28 @@
 
 </div>
 
-<button class="mode-toggle" id="modeToggle" aria-label="切换夜读模式" aria-pressed="false">晝</button>
+<button class="mode-toggle" id="modeToggle" type="button" aria-label="夜读模式" aria-pressed="false" title="切换昼夜模式"><span aria-hidden="true">晝</span></button>
+<noscript><style>.mode-toggle { display: none; }</style></noscript>
 <script>
   (function () {
-    // 邮箱运行时拼接，避免明文地址被静态爬虫采集
-    var mail = document.getElementById('mailLink');
-    var addr = mail.dataset.user + '@' + mail.dataset.domain;
-    mail.href = 'mailto:' + addr;
-    mail.title = '邮箱：' + addr;
-
-  })();
-  (function () {
     var btn = document.getElementById('modeToggle');
+    if (!btn) return;
+    var glyph = btn.querySelector('span');
+    var meta = document.querySelector('meta[name="theme-color"]');
+
     function sync() {
       var night = document.documentElement.classList.contains('night');
-      btn.textContent = night ? '夜' : '晝'; /* 显示当前所处模式 */
+      if (glyph) glyph.textContent = night ? '夜' : '晝'; /* 显示当前所处模式 */
+      if (meta) meta.setAttribute('content', night ? '#1a1815' : '#f7f4ee');
       btn.setAttribute('aria-pressed', String(night));
-      btn.setAttribute('aria-label', night ? '切换日间模式' : '切换夜读模式');
     }
+
     btn.addEventListener('click', function () {
       var night = document.documentElement.classList.toggle('night');
-      localStorage.setItem('theme', night ? 'night' : 'day');
+      try { localStorage.setItem('theme', night ? 'night' : 'day'); } catch (e) {}
       sync();
     });
+
     sync();
   })();
 </script>

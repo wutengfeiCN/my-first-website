@@ -2,7 +2,7 @@
 
 一个单文件、零依赖的静态个人主页：宣纸底色、墨色正文、朱砂印章，支持日间 / 夜读两套主题。
 
-- 线上地址（默认）：<https://wutengfeiCN.github.io/my-first-website/>
+- 线上地址（需先在 Pages 设置里启用）：<https://wutengfeiCN.github.io/my-first-website/>
 - 技术栈：原生 HTML5 + CSS3 + 原生 JavaScript，无框架、无构建步骤
 - 页面体积：`index.html` 约 31 KB（含内联印章字体），正文字体 46 KB
 

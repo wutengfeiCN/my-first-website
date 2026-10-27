@@ -402,29 +402,37 @@
     font-size: clamp(26px, 4vw, 34px);
     font-weight: 400;
   }
-  .mail {
-    display: inline-block;
-    margin: var(--space-4) 0 var(--space-3);
-    font-size: clamp(24px, 4.4vw, 36px);
-    letter-spacing: .02em;
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: var(--space-4);
+    border-top: 1px solid var(--hairline);
+  }
+  .contact-item {
+    display: block;
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--hairline);
     text-decoration: none;
-    border-bottom: 1px solid var(--cinnabar);
-    padding-bottom: var(--space-2);
+  }
+  .contact-item + .contact-item {
+    padding-left: var(--space-5);
+    border-left: 1px solid var(--hairline);
+  }
+  .contact-item .label {
+    display: block;
+    margin-bottom: var(--space-2);
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: .18em;
+    color: var(--ink-soft);
+  }
+  .contact-item .value {
+    display: block;
+    font-size: 20px;
+    color: var(--ink);
     transition: color .2s ease;
   }
-  .mail:hover { color: var(--accent-text); }
-  .contact-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-4);
-    font-family: var(--sans);
-    font-size: 14px;
-  }
-  .contact-links a {
-    color: var(--ink-soft);
-    text-decoration: none;
-  }
-  .contact-links a:hover { color: var(--accent-text); }
+  .contact-item:hover .value { color: var(--accent-text); }
 
   /* ---------- 页脚 ---------- */
   .site-footer {
@@ -519,6 +527,11 @@
     .section { padding: 48px 0; }
     .contact { padding: 48px 0; }
     .hero-links { gap: var(--space-3); }
+    .contact-grid { grid-template-columns: 1fr; }
+    .contact-item + .contact-item {
+      padding-left: 0;
+      border-left: 0;
+    }
     .now-strip { flex-direction: column; gap: 8px; }
     .now-strip .now-date { margin-left: 0; }
     .mode-toggle {
@@ -561,7 +574,7 @@
     }
     body { background-color: #fff; }
     html body, html.night body { background-image: none; }
-    .masthead, .mode-toggle, .skip, .hero-links, .contact-links { display: none; }
+    .masthead, .mode-toggle, .skip, .hero-links { display: none; }
     .hero .seal { position: static; margin-left: auto; }
     .section, .contact { break-inside: avoid; }
     a { text-decoration: none; }

@@ -33,7 +33,7 @@ fi
 
 mkdir -p .fonts
 
-# 收集 index.html 与 404.html 的可见文字（去掉 script/style/注释/标签），
+# 收集全站 HTML 的可见文字（去掉 script/style/注释/标签），
 # 再加上 ASCII 与常用标点，避免遗漏。
 python3 - "$CHARS" <<'PY'
 import html
@@ -42,7 +42,11 @@ import re
 import sys
 
 out = pathlib.Path(sys.argv[1])
-files = [p for p in ("index.html", "404.html") if pathlib.Path(p).exists()]
+skip = {".git", ".tmp", ".fonts", ".venv", "_site", "node_modules"}
+files = [
+    p for p in sorted(pathlib.Path(".").rglob("*.html"))
+    if not (set(p.parts) & skip)
+]
 chars = set()
 
 for name in files:

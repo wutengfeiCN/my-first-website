@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>阿奔的笔记</title>
+    <link>https://wutengfeiCN.github.io/my-first-website/notes/</link>
+    <description>工程里的取舍，书页里的分寸。</description>
+    <language>zh-CN</language>
+    <atom:link href="https://wutengfeiCN.github.io/my-first-website/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>我把个人主页重做了一遍</title>
+      <link>https://wutengfeiCN.github.io/my-first-website/notes/2026-10-27-rebuild.html</link>
+      <guid isPermaLink="true">https://wutengfeiCN.github.io/my-first-website/notes/2026-10-27-rebuild.html</guid>
+      <pubDate>Tue, 27 Oct 2026 00:00:00 +0000</pubDate>
+      <description>旧版像一张海报：好看，但没有下一页。这次只做三件事——把首页变成目录，把主张写成能被检验的句子，把维护成本降下来。</description>
+    </item>
+    <item>
+      <title>复盘一个智能化项目，我会先问五个问题</title>
+      <link>https://wutengfeiCN.github.io/my-first-website/notes/2026-10-20-five-questions.html</link>
+      <guid isPermaLink="true">https://wutengfeiCN.github.io/my-first-website/notes/2026-10-20-five-questions.html</guid>
+      <pubDate>Tue, 20 Oct 2026 00:00:00 +0000</pubDate>
+      <description>项目复盘容易写成流水账。五个问题，把一次项目拆成下次能复用的话。</description>
+    </item>
+    <item>
+      <title>知者创物，巧者述之：读《考工记》</title>
+      <link>https://wutengfeiCN.github.io/my-first-website/notes/2026-10-13-kaogongji.html</link>
+      <guid isPermaLink="true">https://wutengfeiCN.github.io/my-first-website/notes/2026-10-13-kaogongji.html</guid>
+      <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
+      <description>「知者创物，巧者述之守之，世谓之工。」这句话把创造、传承、守成放在一起，对今天的工程交付仍然扎人。</description>
+    </item>
+  </channel>
+</rss>

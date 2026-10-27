@@ -136,7 +136,7 @@
   /* ---------- 首屏 ---------- */
   .hero {
     position: relative;
-    padding: 72px 0 64px;
+    padding: 72px 0 40px;
   }
   .eyebrow {
     font-family: var(--sans);
@@ -146,6 +146,7 @@
     margin-bottom: 18px;
   }
   h1 {
+    text-wrap: balance;
     font-size: clamp(46px, 8.6vw, 80px);
     font-weight: 400;
     line-height: 1.16;
@@ -251,11 +252,12 @@
 
   /* ---------- 分节 ---------- */
   .section {
-    padding: 64px 0;
+    padding: 56px 0;
     border-top: 1px solid var(--hairline);
     scroll-margin-top: 84px;
   }
   .section-title {
+    text-wrap: balance;
     font-size: clamp(28px, 4.2vw, 38px);
     font-weight: 400;
     line-height: 1.25;
@@ -280,7 +282,7 @@
   .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    gap: 32px;
     margin-top: 38px;
   }
   .card {
@@ -474,8 +476,16 @@
   .hero .hero-links { animation-delay: .18s; }
 
   /* ---------- 响应式 ---------- */
+  @media (max-width: 1100px) {
+    .cards { grid-template-columns: repeat(2, 1fr); }
+    .card:nth-child(3) { grid-column: 1 / -1; }
+    .card:nth-child(3) p { max-width: 40em; }
+  }
+
   @media (max-width: 900px) {
     .cards { grid-template-columns: 1fr; gap: 30px; }
+    .card:nth-child(3) { grid-column: auto; }
+    .card:nth-child(3) p { max-width: 32em; }
     .way-grid { grid-template-columns: 1fr; gap: 26px; }
   }
 
@@ -575,6 +585,7 @@
     scroll-margin-top: 84px;
   }
   .page-head h1 {
+    text-wrap: balance;
     margin: 8px 0 0;
     font-size: clamp(32px, 5vw, 50px);
     font-weight: 400;
@@ -684,6 +695,7 @@
   /* 文章页头 */
   .article-head { padding: 40px 0 8px; }
   .article-head h1 {
+    text-wrap: balance;
     margin: 10px 0 16px;
     font-size: clamp(34px, 5.8vw, 56px);
     font-weight: 400;
@@ -707,17 +719,18 @@
     max-width: 40em;
     margin-top: 40px;
     font-size: 17px;
-    line-height: 1.95;
+    line-height: 1.9;
   }
-  .prose p { margin: 1.05em 0; }
+  .prose p { margin: .92em 0; text-wrap: pretty; }
+  .prose h2:first-of-type { margin-top: 1.4em; }
   .prose h2 {
-    margin: 2.2em 0 .65em;
+    margin: 1.8em 0 .65em;
     font-size: 26px;
     font-weight: 400;
     line-height: 1.45;
   }
   .prose h3 {
-    margin: 1.8em 0 .45em;
+    margin: 1.6em 0 .45em;
     font-size: 20px;
     font-weight: 400;
     line-height: 1.5;
@@ -725,7 +738,7 @@
   .prose ul, .prose ol { margin: 1em 0 1.1em 1.4em; }
   .prose li { margin: .4em 0; }
   .prose blockquote {
-    margin: 1.7em 0;
+    margin: 1.6em 0;
     padding: 2px 0 2px 18px;
     border-left: 2px solid var(--cinnabar);
     color: var(--ink-soft);
@@ -811,7 +824,7 @@
     font-family: var(--sans);
     font-size: 11px;
     letter-spacing: .1em;
-    color: var(--cinnabar);
+    color: var(--accent-text);
   }
   .flow figcaption {
     margin-top: 8px;
@@ -938,6 +951,8 @@
     .article-head { padding: 30px 0 6px; }
     .prose { margin-top: 28px; font-size: 16.5px; }
     .prose h2 { font-size: 23px; }
+    /* 手机上让标题按标点自然断行，避免把「项目」拆开 */
+    .article-head h1 { text-wrap: initial; }
     .article-nav { flex-direction: column; gap: 16px; }
     .article-nav a { max-width: 100%; }
     .article-nav .next { margin-left: 0; text-align: left; }

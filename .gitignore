@@ -14,3 +14,6 @@ _site/
 .tmp/
 .fonts/
 .venv/
+
+# Python 构建缓存
+__pycache__/

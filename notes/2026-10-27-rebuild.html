@@ -56,17 +56,41 @@
       "dateModified": "2026-10-27",
       "inLanguage": "zh-CN",
       "wordCount": 1247,
-      "author": { "@type": "Person", "name": "阿奔", "url": "https://wutengfeiCN.github.io/my-first-website/" },
-      "publisher": { "@type": "Person", "name": "阿奔" },
+      "author": {
+        "@type": "Person",
+        "name": "阿奔",
+        "url": "https://wutengfeiCN.github.io/my-first-website/"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "阿奔"
+      },
       "image": "https://wutengfeiCN.github.io/my-first-website/assets/og-cover.png",
-      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://wutengfeiCN.github.io/my-first-website/notes/2026-10-27-rebuild.html" }
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://wutengfeiCN.github.io/my-first-website/notes/2026-10-27-rebuild.html"
+      }
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://wutengfeiCN.github.io/my-first-website/" },
-        { "@type": "ListItem", "position": 2, "name": "笔记", "item": "https://wutengfeiCN.github.io/my-first-website/notes/" },
-        { "@type": "ListItem", "position": 3, "name": "我把个人主页重做了一遍" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://wutengfeiCN.github.io/my-first-website/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "笔记",
+          "item": "https://wutengfeiCN.github.io/my-first-website/notes/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "我把个人主页重做了一遍"
+        }
       ]
     }
   ]
@@ -91,7 +115,6 @@
 </header>
 
 <main id="main" tabindex="-1">
-
   <div class="wrap">
     <nav class="breadcrumb" aria-label="面包屑">
       <a href="../index.html">首页</a><span class="sep">/</span><a href="./">笔记</a><span class="sep">/</span><span>我把个人主页重做了一遍</span>
@@ -111,65 +134,54 @@
       </header>
 
       <div class="prose">
-        
 <h2>起点：一张好看的海报</h2>
 <p>旧版是一个单页，31 KB，宣纸底、墨色字、朱砂印章，五张卡片分别写建筑智能化、AI、Linux、国学。每次有人夸它好看，我都知道问题在哪：看完之后，没有下一步。</p>
 <p>一个个人主页至少要回答三件事：你是谁、你能做什么、怎么找你。旧版把第一件说了五遍，第二件只有形容词，第三件藏在页脚。</p>
-
 <h2>判断一：首页是目录，不是简历</h2>
 <p>我参考了 <a href="https://lixiaolai.com/" target="_blank" rel="noopener noreferrer">lixiaolai.com</a> 的结构：首页分成文章、书、动态、关于，每块都给一个入口，而不是把所有内容摊在一屏。</p>
 <p>新版定了五节：现在、技、道、笔记、关于。每节只做一件事：</p>
 <ul>
-  <li><strong>现在</strong>：三条动态，带更新日期；</li>
-  <li><strong>技</strong>：三种能力，写清交付物；</li>
-  <li><strong>道</strong>：三句经典，带出处；</li>
-  <li><strong>笔记</strong>：最新的三篇；</li>
-  <li><strong>关于</strong>：两段自述。</li>
+<li><strong>现在</strong>：三条动态，带更新日期；</li>
+<li><strong>技</strong>：三种能力，写清交付物；</li>
+<li><strong>道</strong>：三句经典，带出处；</li>
+<li><strong>笔记</strong>：最新的三篇；</li>
+<li><strong>关于</strong>：两段自述。</li>
 </ul>
 <p>首页不负责讲完我，只负责让人知道往下点哪里。</p>
-
 <h2>为什么是这五节</h2>
 <p>五节不是拍脑袋：现在回答「最近在做什么」，技回答「能交付什么」，道回答「凭什么这么想」，笔记回答「写过什么」，关于回答「是谁」。</p>
 <p>顺序也有讲究。先给动态，再给能力，最后才是履历。访客最想知道的不是我从哪毕业，而是我现在能不能帮上忙。</p>
-
 <h2>判断二：主张要能被检验</h2>
 <p>「让楼宇更懂人」是主张，不是成绩。主张后面必须跟能核对的东西：项目、数字、文章。</p>
 <p>这次先写主张和结构，数字留空。我不想为了好看编一个「服务 50+ 项目」。等有真实数据再补，比一开始就写满更可信。</p>
-
 <h2>分享卡片也是页面的一部分</h2>
 <p>OG 图、标题、描述、JSON-LD 这些看不见的东西，决定了链接发出去好不好看、搜索引擎能不能读懂。旧版有，但域名还是 github.io 的子路径；这次至少把结构补齐，域名等买了再换。</p>
-
 <h2>判断三：维护成本决定能走多远</h2>
 <p>旧版最要命的地方不是设计，是字体：正文用了 199 字的子集，改一句话就可能出现缺字，得手动拼字符集、跑 pyftsubset。</p>
 <p>这次做了三件事：</p>
 <ol>
-  <li>换用完整的霞鹜文楷 Regular，按页面用字重新生成子集；</li>
-  <li>写了 <code>scripts/subset-font.sh</code>，从 HTML 提取用字，一条命令生成 woff2；</li>
-  <li>把样式抽到 <code>assets/site.css</code>，多页共用。</li>
+<li>换用完整的霞鹜文楷 Regular，按页面用字重新生成子集；</li>
+<li>写了 <code>scripts/subset-font.sh</code>，从 HTML 提取用字，一条命令生成 woff2；</li>
+<li>把样式抽到 <code>assets/site.css</code>，多页共用。</li>
 </ol>
 <p>结果是：新增一页、改一段文案，不再需要碰字体。</p>
-
 <h2>顺手补的票</h2>
 <ul>
-  <li>404、<code>robots.txt</code>、<code>sitemap.xml</code>、RSS；</li>
-  <li>页眉的「跳到正文」，键盘用户第一个 Tab 就能用；</li>
-  <li>主题切换改成 <code>switch</code> 语义，夜间小字对比度从 4.36 提到 5.65；</li>
-  <li>320px 下标题不再出现单字成行；</li>
-  <li>夜读模式的印章反白成朱砂底。</li>
+<li>404、<code>robots.txt</code>、<code>sitemap.xml</code>、RSS；</li>
+<li>页眉的「跳到正文」，键盘用户第一个 Tab 就能用；</li>
+<li>主题切换改成 <code>switch</code> 语义，夜间小字对比度从 4.36 提到 5.65；</li>
+<li>320px 下标题不再出现单字成行；</li>
+<li>夜读模式的印章反白成朱砂底。</li>
 </ul>
-
 <h2>视觉上只改了三处</h2>
 <p>宣纸、墨色、朱砂、篆刻都保留。改的是：导航从页内锚点换成全站入口；卡片从五张等权改成三张有交付物的能力卡；印章在夜间反白成朱砂底。</p>
 <p>换一套视觉很容易，难的是让旧的气质装下新的结构。</p>
-
 <h2>没做的</h2>
 <p>没有笔记（这篇是第一篇）、没有域名、没有真实数字、没有评论区。</p>
 <p>这些不是遗漏，是顺序：先让站点能长大，再往里放东西。</p>
-
 <h2>小结</h2>
 <p>个人网站不是一次做完的，是能一直改下去的。判断一次改版成不成功，我只看一件事：下一次改它，是不是比上一次更容易。</p>
 <p>下一步是三件事：补真实数字、绑域名、把时间线和简历放上关于页。都不难，但都要等真实材料。</p>
-
       </div>
 
       <footer class="article-foot">
@@ -181,7 +193,6 @@
       </footer>
     </article>
   </div>
-
 </main>
 
 <footer class="site-footer">

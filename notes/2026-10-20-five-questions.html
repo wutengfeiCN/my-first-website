@@ -56,17 +56,41 @@
       "dateModified": "2026-10-20",
       "inLanguage": "zh-CN",
       "wordCount": 884,
-      "author": { "@type": "Person", "name": "阿奔", "url": "https://wutengfeiCN.github.io/my-first-website/" },
-      "publisher": { "@type": "Person", "name": "阿奔" },
+      "author": {
+        "@type": "Person",
+        "name": "阿奔",
+        "url": "https://wutengfeiCN.github.io/my-first-website/"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "阿奔"
+      },
       "image": "https://wutengfeiCN.github.io/my-first-website/assets/og-cover.png",
-      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://wutengfeiCN.github.io/my-first-website/notes/2026-10-20-five-questions.html" }
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://wutengfeiCN.github.io/my-first-website/notes/2026-10-20-five-questions.html"
+      }
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://wutengfeiCN.github.io/my-first-website/" },
-        { "@type": "ListItem", "position": 2, "name": "笔记", "item": "https://wutengfeiCN.github.io/my-first-website/notes/" },
-        { "@type": "ListItem", "position": 3, "name": "复盘一个智能化项目，我会先问五个问题" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://wutengfeiCN.github.io/my-first-website/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "笔记",
+          "item": "https://wutengfeiCN.github.io/my-first-website/notes/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "复盘一个智能化项目，我会先问五个问题"
+        }
       ]
     }
   ]
@@ -91,7 +115,6 @@
 </header>
 
 <main id="main" tabindex="-1">
-
   <div class="wrap">
     <nav class="breadcrumb" aria-label="面包屑">
       <a href="../index.html">首页</a><span class="sep">/</span><a href="./">笔记</a><span class="sep">/</span><span>复盘一个智能化项目，我会先问五个问题</span>
@@ -111,38 +134,30 @@
       </header>
 
       <div class="prose">
-        
 <h2>为什么是问题，不是总结</h2>
 <p>复盘最常见的写法是「完成了什么、遇到了什么困难、下次注意」。这种总结三个月后自己都看不懂。</p>
 <p>我习惯用五个问题逼自己回到决策现场。它们不依赖项目大小，弱电、自控、AI 工具都能用。</p>
-
 <h2>一、约束是什么</h2>
 <p>预算、工期、既有系统、物业的运维能力，哪个是真约束，哪个只是习惯？</p>
 <p>约束不是借口，是设计的起点。一个方案如果在约束里不成立，再先进也不该上。</p>
-
 <h2>二、边界画在哪</h2>
 <p>系统到哪为止？接口谁负责？</p>
 <p>智能化项目最常见的扯皮，不是技术做不出来，是两家单位的界面没人画清：弱电、自控、消防、安防、网络，谁供信号、谁供电源、谁做联动。</p>
 <p>复盘时把界面写成一句话：<strong>这件事出问题，找谁。</strong></p>
 <p>举两个常见的界面：消防报警时门禁怎么释放、由谁给信号；空调机组的状态、控制、报警三个点，是 BA 供干接点还是冷源侧供。写清楚，调试时少吵三天。</p>
-
 <h2>三、失效的时候谁先知道</h2>
 <p>断电、断网、单点故障、传感器误报——不是会不会发生，是什么时候发生。</p>
 <p>要问的是：报警给谁？多久响应？有没有本地兜底？如果值班的人不在，系统还能不能退到安全状态？</p>
 <p>一个只在演示时正常的系统，不算交付。</p>
 <p>误报也是失效。一个每天报三十次的系统，值班的人很可能第三天就把报警音量关掉——这时候系统已经失效了，只是没人承认。</p>
-
 <h2>四、验收怎么测</h2>
 <p>「运行正常」不是指标。</p>
 <p>能测的写法是：点位正确率、联动成功率、误报次数、响应时间、连续运行天数。验收标准在开工前就该写进合同，而不是调试完再补。</p>
-
 <h2>五、余量留了多少</h2>
 <p>点位、带宽、算力、人手，都要留余量。</p>
 <p>余量不是浪费，是给未来的变更留位置。一个把控制器端口用满的方案，第一次改造就会变成拆改。</p>
-
 <h2>把五问写进模板</h2>
 <p>我现在的做法是：项目结束当天，用这五问各写三行，存进一个 Markdown 文件。三个月后回看，能想起来的不是情绪，是当时的约束和取舍。</p>
-
 <h2>附：复盘模板</h2>
 <p>把下面几行复制到 Markdown 里，当天填完：</p>
 <pre><code>## 项目一句话
@@ -157,11 +172,10 @@
 2. 边界：
 3. 失效：
 4. 验收：
-5. 余量：</code></pre>
-
+5. 余量：
+</code></pre>
 <p>模板不是为了写满，是为了逼自己把「大概」「还行」换成具体的话。</p>
 <p>复盘的价值不在总结过去，在降低下一次的决策成本。</p>
-
       </div>
 
       <footer class="article-foot">
@@ -173,7 +187,6 @@
       </footer>
     </article>
   </div>
-
 </main>
 
 <footer class="site-footer">

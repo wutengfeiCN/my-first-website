@@ -119,6 +119,13 @@ def tags_html(tags: list[str]) -> str:
     return "".join(f'<span class="tag">{html.escape(t)}</span>' for t in tags)
 
 
+def meta_tags(tags: list[str]) -> str:
+    if not tags:
+        return ""
+    return f'<span class="meta-tags">{tags_html(tags)}</span>'
+
+
+
 def epigraph_html(note: dict) -> str:
     text = note.get("epigraph")
     if not text:
@@ -157,7 +164,7 @@ def article_body(note: dict, content: str, newer: dict | None, older: dict | Non
           <time datetime="{note["date"].isoformat()}">{date_cn(note["date"])}</time>
           <span>约 {chars:,} 字</span>
           <span>{reading_minutes(chars)} 分钟</span>
-          {tags_html(note["tags"])}
+          {meta_tags(note["tags"])}
         </p>
       </header>
 

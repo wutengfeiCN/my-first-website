@@ -9,3 +9,8 @@ Thumbs.db
 
 # 本地构建 / 预览
 _site/
+
+# 字体源与本地构建临时文件
+.tmp/
+.fonts/
+.venv/

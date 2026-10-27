@@ -853,6 +853,35 @@
   }
   .timeline p { margin: 0; font-size: 15px; }
 
+  /* 临时示例提示：内容替换后删除对应 .draft-note 即可 */
+  .draft-note {
+    margin: 0 0 18px;
+    padding: 8px 12px;
+    border-left: 2px solid var(--cinnabar);
+    background: var(--card);
+    font-family: var(--sans);
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+
+  .resume-link {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 1px solid var(--cinnabar);
+    border-radius: 6px;
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--ink);
+    text-decoration: none;
+    transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .resume-link:hover {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--paper);
+  }
+
   /* 页脚链接 */
   .foot-links {
     display: flex;

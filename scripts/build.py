@@ -119,6 +119,20 @@ def tags_html(tags: list[str]) -> str:
     return "".join(f'<span class="tag">{html.escape(t)}</span>' for t in tags)
 
 
+def epigraph_html(note: dict) -> str:
+    text = note.get("epigraph")
+    if not text:
+        return ""
+    source = note.get("epigraph_source", "")
+    cite = f'<figcaption>{html.escape(source)}</figcaption>' if source else ""
+    return f'''      <figure class="epigraph">
+        <blockquote><p>{html.escape(text)}</p></blockquote>
+        {cite}
+      </figure>
+
+'''
+
+
 def article_body(note: dict, content: str, newer: dict | None, older: dict | None, updated: str) -> str:
     chars = plain_length(content)
     newer_html = (
@@ -147,7 +161,7 @@ def article_body(note: dict, content: str, newer: dict | None, older: dict | Non
         </p>
       </header>
 
-      <div class="prose">
+{epigraph_html(note)}      <div class="prose">
 {content}
       </div>
 
@@ -269,6 +283,7 @@ def page_common(updated: str) -> dict[str, str]:
         "ABOUT": "../about.html",
         "CONTACT": "../index.html#contact",
         "RSS": "../rss.xml",
+        "PROJECTS": "../projects/",
         "UPDATED": updated,
         "ACTIVE_HOME": "",
         "ACTIVE_NOTES": "",
@@ -338,16 +353,18 @@ def write_rss(notes: list[dict], updated: str) -> None:
     items = []
     for n in notes:
         dt = datetime.combine(n["date"], time.min).replace(tzinfo=timezone.utc)
+        body = render_markdown(n["md"]).replace("]]>", "]]&gt;")
         items.append(f'''    <item>
       <title>{html.escape(n["title"])}</title>
       <link>{BASE}/notes/{n["slug"]}.html</link>
       <guid isPermaLink="true">{BASE}/notes/{n["slug"]}.html</guid>
       <pubDate>{format_datetime(dt)}</pubDate>
       <description>{html.escape(n["summary"])}</description>
+      <content:encoded><![CDATA[{body}]]></content:encoded>
     </item>''')
     last = datetime.combine(notes[0]["date"], time.min).replace(tzinfo=timezone.utc)
     rss = f'''<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>阿奔的笔记</title>
     <link>{BASE}/notes/</link>
@@ -364,6 +381,8 @@ def write_rss(notes: list[dict], updated: str) -> None:
 
 def write_sitemap(notes: list[dict], latest_iso: str) -> None:
     urls = [("", latest_iso, "1.0"), ("notes/", latest_iso, "0.9"), ("about.html", latest_iso, "0.7")]
+    if (ROOT / "projects" / "index.html").exists():
+        urls.append(("projects/", latest_iso, "0.8"))
     for n in notes:
         urls.append((f'notes/{n["slug"]}.html', n["date"].strftime("%Y-%m-%d"), "0.8"))
     body = "\n".join(

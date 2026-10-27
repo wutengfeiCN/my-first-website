@@ -46,7 +46,7 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html 404.html about.html robots.txt sitemap.xml rss.xml _site/
-          cp -r assets notes _site/
+          cp -r assets notes projects _site/
 
       - name: Configure Pages
         # 注意：Pages 站点必须先在仓库 Settings → Pages 里手动启用一次。

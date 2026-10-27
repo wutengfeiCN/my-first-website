@@ -5,6 +5,8 @@ date: 2026-10-20
 tags: [工程, 方法]
 summary: 项目复盘容易写成流水账。五个问题，把一次项目拆成下次能复用的话。
 home_summary: 约束、边界、失效、验收、余量：一份不依赖具体项目的复盘清单。
+epigraph: 复盘不是写总结，是把决策现场留下来。
+epigraph_source: —— 本文
 ---
 
 ## 为什么是问题，不是总结
@@ -12,6 +14,17 @@ home_summary: 约束、边界、失效、验收、余量：一份不依赖具体
 复盘最常见的写法是「完成了什么、遇到了什么困难、下次注意」。这种总结三个月后自己都看不懂。
 
 我习惯用五个问题逼自己回到决策现场。它们不依赖项目大小，弱电、自控、AI 工具都能用。
+
+<figure class="flow">
+  <ol>
+    <li><span>01</span>约束</li>
+    <li><span>02</span>边界</li>
+    <li><span>03</span>失效</li>
+    <li><span>04</span>验收</li>
+    <li><span>05</span>余量</li>
+  </ol>
+  <figcaption>复盘时按顺序问，别跳步。</figcaption>
+</figure>
 
 ## 一、约束是什么
 
